@@ -1,0 +1,1597 @@
+@import "mixins.scss"
+@import "fonts"
+
+
+
+$link-hover-color: #c7b299
+$link-active-color: #998675
+$header-text-color: #ffffff
+
+body 
+	max-width: 1920px
+	min-width: 375px
+	margin: 0 auto
+
+.content-wrp
+	max-width: 1170px
+	padding: 0 50px
+	margin: 0 auto
+
+.site-button
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	text-decoration: none
+	font-family: Raleway, sans-serif
+	font-size: 14px
+	font-weight: 800
+	text-transform: uppercase
+	color: #ffffff
+	min-width: 170px
+	min-height: 50px
+	padding: 0 19px
+	box-sizing: border-box
+	background-color: #998675
+	border-radius: 3px
+	transition: background .2s
+.site-button:hover
+	border: 1px solid $link-hover-color
+	background: #c7b299
+	transition: background .2s
+.site-button:active
+	background: #fff
+	color: #998675
+
+
+
+//Header
+
+
+.site-header
+	background: #212121
+	position: relative
+
+.logo-n-navigation
+	display: flex
+	align-items: center
+	padding-top: 40px
+	padding-bottom: 40px
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	margin: 0 auto
+	z-index: 3
+.button-menu
+	display: none
+.logo
+	margin-right: auto
+	text-decoration: none
+	display: inline-flex
+	align-items: center
+	&__text
+		font-family: Raleway, sans-serif
+		font-size: 34px
+		font-weight: 400
+		letter-spacing: -0.04em
+		color: #ffffff
+		transition: color .2s
+	&__img
+		height: 59px
+		width: 66px
+		fill: #fff
+		transition: fill .2s
+.logo:hover .logo__text
+	color: $link-hover-color
+	transition: color .2s
+.logo:hover .logo__img
+	fill: $link-hover-color
+	transition: fill .2s
+.logo:active .logo__text
+	color: $link-active-color
+.logo:active .logo__img
+	fill: $link-active-color
+
+.navigation-block
+	display: flex
+	align-items: center
+	&__menu
+	&__cart
+		margin: 0 28px 0 48px
+	&__cart-icon
+		height: 27px
+		width: 20px
+		fill: #fff
+		transition: fill .2s
+	&__cart-icon:hover
+		fill: $link-hover-color
+		transition: fill .2s
+	&__cart-icon:active
+		fill: $link-active-color
+		transition: fill .2s
+
+.search-form
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	position: relative
+	min-height: 24px
+	min-width: 24px
+	&__input
+		height: 28px
+		border: none
+		width: 0
+		outline: none
+		padding: 0
+		box-sizing: border-box
+		transition: width .5s
+	&__label
+		padding: 0
+		cursor: pointer
+		position: absolute
+		left: 2px
+	&__icon
+		fill: #fff
+		width: 24px
+		height: 24px
+		transition: fill .3s
+	&__input:focus
+		transition: width .5s
+		width: 200px
+		padding: 0 7px 0 29px
+	&__input:focus ~ .search-form__label > .search-form__icon
+		fill: $link-hover-color
+		transition: fill .3s
+
+
+.header-menu
+	&__list
+		display: flex
+		margin: 0
+		padding: 0
+		list-style: none
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: center
+	&__link
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding: 15px 14px
+		text-decoration: none
+		font-family: "Montserrat", sans-serif
+		font-size: 14px
+		font-weight: 300
+		color: $header-text-color
+		transition: color .2s
+	&__link:hover
+		color: #c7b299
+		transition: color .2s
+	&__link:active
+		color: $link-active-color
+
+
+
+.header-slider
+	position: relative
+	//height: 1024px
+	height: 100vh
+	&__arrow-button
+		width: 40px
+		height: 73px
+		position: relative
+		cursor: pointer
+		overflow: hidden
+		background: none
+		border: none
+		outline: none
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto 0
+		z-index: 2
+	&__arrow-button_left
+		left: 8%
+	&__arrow-button_left:after
+		content: ""
+		display: block
+		height: 50px
+		width: 50px
+		border-left: 2px solid #ffffff
+		border-top: 2px solid #ffffff
+		transform: rotate(-45deg)
+		position: absolute
+		top: 10px
+		left: 12px
+	&__arrow-button_right
+		right: 8%
+	&__arrow-button_right:after
+		content: ""
+		display: block
+		height: 50px
+		width: 50px
+		border-left: 2px solid #ffffff
+		border-top: 2px solid #ffffff
+		transform: rotate(135deg)
+		position: absolute
+		top: 10px
+		right: 10px
+		transition: border-color .2s
+	&__arrow-button:hover:after
+		border-color: #d3c1ad
+		transition: border-color .2s
+	&__arrow-button:active:after
+		border-color: $link-active-color
+	&__dots
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 40px
+		z-index: 2
+	&__dot
+		display: block
+		width: 11px
+		height: 11px
+		border-radius: 50%
+		opacity: 0.5
+		background-color: #ffffff
+		margin: 0 5px
+		cursor: pointer
+		box-sizing: border-box
+		&_active
+			transform: scale(1.4)
+			background: none
+			border: 1px solid #d3c1ad
+	&__dot:hover
+		transform: scale(1.4)
+	&__slide
+		background: url("../img/header_slide_1.jpg") no-repeat center center
+		background-size: cover
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		position: relative
+		z-index: 1
+	&__content
+		display: flex
+		flex-direction: column
+		padding: 0 100px
+		align-items: center
+		max-width: 590px
+		font-size: 30px
+		color: $header-text-color
+	&__up-title
+		font-family: Raleway, sans-serif
+		font-size: 36px
+		font-weight: 500
+		margin: 0 0 1px
+		text-align: center
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 52px
+		font-weight: 800
+		margin: 0 0 16px
+		text-align: center
+	&__title-break
+		display: none
+	&__text
+		font-family: Montserrat, sans-serif
+		font-size: 16px
+		font-weight: 300
+		text-align: center
+		margin: 0 0 52px
+	&__button
+
+
+.section-services
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	padding-top: 80px
+	padding-bottom: 80px
+.services-block
+	max-width: 300px
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 0 0 30px
+	position: relative
+	margin: 0 auto
+	&__link
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin: 0 0 12px
+		text-decoration: none
+		color: #555555
+	&__icon-wrp
+		height: 51px
+		margin: 0 0 26px
+		display: flex
+		justify-content: center
+		align-items: flex-end
+	&__icon
+		fill: CurrentColor
+		transition: fill .2s
+		&_design
+			height: 51px
+			width: 51px
+		&_dev
+			height: 42px
+			width: 46px
+		&_custom
+			height: 46px
+			width: 46px
+		&_marketing
+			height: 38px
+			width: 55px
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 22px
+		font-weight: 600
+		transition: color .2s
+		text-align: center
+	&__text
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 300
+		line-height: 24px
+		color: #8c8c8c
+		text-align: center
+		margin: 0
+.services-block:after 
+	content: ""
+	display: block
+	width: 70px
+	border-bottom: 3px solid #f1eee9
+	bottom: 0
+	position: absolute
+	transition: border-color .2s
+.services-block:hover:after
+	border-color: $link-hover-color
+	transition: border-color .2s
+.services-block:hover .services-block__title
+	color: $link-hover-color
+	transition: color .2s
+.services-block:hover .services-block__icon
+	fill: $link-hover-color
+	transition: fill .2s
+.services-block:active:after
+	border-color: $link-active-color
+.services-block:active .services-block__title
+	color: $link-active-color
+.services-block:active .services-block__icon
+	fill: $link-active-color
+
+
+
+.section-title
+	font-family: Raleway, sans-serif
+	font-size: 30px
+	font-weight: 600
+	letter-spacing: 0.2px
+	color: #555555
+	text-align: center
+.section-description
+	font-family: Montserrat, sans-serif
+	font-size: 16px
+	font-weight: 300
+	line-height: 28px
+	color: #8c8c8c
+	margin: 0 0 36px
+	text-align: center
+	max-width: 770px
+
+
+//Section Realization
+.section-realization
+	display: flex
+	flex-direction: column
+	align-items: center
+	background-color: #fbfaf8
+	padding: 75px 0 0
+	&__title
+		margin: 0 0 14px
+.carousel
+	width: 100%
+	max-width: 1230px
+	height: auto
+
+
+
+//Section Text Boxes
+.section-text-boxes
+	background: linear-gradient(to right, #211b19, #4d3326)
+	&__content-wrp
+		display: flex
+		align-items: center
+		//padding: 50px 0
+		padding-top: 48px
+		padding-bottom: 50px
+	&__text
+		margin: 0 auto 0 0
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 28px
+		line-height: 28px
+		font-weight: 400
+		letter-spacing: 0.3px
+		color: #ffffff
+		margin: 0 0 8px
+	&__title-waxon
+		color: #c7b299
+	&__description
+		font-family: Montserrat, sans-serif
+		font-size: 18px
+		font-weight: 300
+		color: #615855
+		margin: 0
+
+
+
+//Section Lastest Projects
+.section-lastest-projects
+	padding-top: 75px
+	padding-bottom: 80px
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__title
+		margin: 0 0 14px
+.projects-categories
+	display: flex
+	justify-content: center
+	margin: 0 0 40px
+	&__button
+		margin: 0 10px 0 0
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 300
+		color: #8c8c8c
+		min-width: 124px
+		min-height: 34px
+		display: flex
+		justify-content: center
+		align-items: center
+		border: 1.0px solid #ebebeb
+		border-radius: 3.0px
+		box-sizing: border-box
+		cursor: pointer
+		transition: color .2s, background .2s
+		outline: none
+		&_all
+			min-width: 71px
+
+	&__button_active
+		background: $link-active-color
+		color: #fff
+	&__button:last-child
+		margin: 0
+	&__button:hover
+		color: #fff
+		background: $link-hover-color
+		transition: color .2s, background .2s
+	&__button:active
+		background: $link-active-color
+.projects-list
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	margin: 0 0 40px
+.project-block
+	max-width: 370px
+	position: relative
+	&__image-block
+		display: flex
+		width: 100%
+		//height: 100%
+	&__img
+		max-height: 237px
+		width: 100%
+		height: auto
+		transition: filter .3s
+	&__hover-links-wrp
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		padding-bottom: 64%
+	&__hover-links
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		display: none
+		justify-content: center
+		align-items: center
+	&__hover-link
+		text-decoration: none
+	&__hover-link-icon
+		fill: #fff
+		transition: fill .2s
+		cursor: pointer
+	&__hover-link:hover .project-block__hover-link-icon
+		fill: $link-hover-color
+		transition: fill .2s
+	&__hover-link:active .project-block__hover-link-icon
+		fill: $link-active-color
+	&__hover-link-link
+		margin: 0 28px 0 0
+	&__text-block
+		background: #fbfaf8
+		padding: 26px 30px 27px
+		position: relative
+		transition: background-color .3s
+	&__text-block:after
+		content: ""
+		position: absolute
+		top: -10px
+		left: 19px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 15px 10px 15px
+		border-color: transparent transparent #fbfaf8 transparent
+		box-sizing: border-box
+		transition: border-color .3s
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 20px
+		font-weight: 500
+		color: #c7b299
+		margin: 0 0 6px
+		display: block
+
+	&__categories
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 300
+		color: #d1d1d1
+		display: block
+.project-block:hover .project-block__text-block
+	background-color: #362f2d
+	transition: background-color .3s
+.project-block:hover .project-block__text-block:after 
+	border-color: transparent transparent #362f2d transparent
+	transition: border-color .3s	
+.project-block:hover .project-block__title
+	color: #fff
+	transition: color .3s
+.project-block:hover .project-block__categories
+	color: $link-hover-color
+.project-block:hover .project-block__category
+	color: $link-hover-color
+	transition: color .3s
+.project-block:hover .project-bloc
+.project-block:hover .project-block__img
+	filter: brightness(.5)
+	transition: filter .3s
+.project-block:hover .project-block__hover-links
+	display: flex
+.project-block:hover .project-block__hover-links-wrp
+	display: block
+
+
+// Section Video Present
+.section-video-present
+	position: relative
+.video-present
+	width: 100%
+	height: auto
+	max-height: 100%
+.video-present-text
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	margin: 0 auto
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	max-width: 570px
+	&__btn
+		background: rgba(0,0,0,0.2)
+		padding: 10px
+		border-radius: 50%
+		border: none
+		outline: none
+		margin: 0 0 36px
+		display: flex
+		justify-content: center
+		align-items: center
+	&__img
+		width: 80px
+		height: 80px
+		fill: #fff
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 30px
+		font-weight: 500
+		color: #ffffff
+		margin: 0 0 16px
+	&__text
+		font-family: Montserrat, sans-serif
+		font-size: 16px
+		line-height: 28px
+		font-weight: 300
+		color: #ffffff
+		margin: 0 0 28px
+		text-align: center
+	&__time
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 400
+		color: #c7b299
+		transition: fill .3s
+	&__btn:hover .video-present-text__img
+		fill: $link-hover-color
+		transition: fill .3s
+	&__btn:active .video-present-text__img
+		fill: $link-active-color
+		transition: fill .3s
+
+
+
+
+//Section Mobile
+.section-mobile
+	background-color: #fbfaf8
+	&__content-wrp
+		min-height: 690px
+		display: flex
+		justify-content: center
+	&__img
+		align-self: flex-end
+		margin: 0 29px 0 37px
+		height: auto
+		width: 38%
+		max-width: 423px
+.mobile-text-block
+	max-width: 660px
+	display: flex
+	padding: 80px 0
+	flex-direction: column
+	justify-content: center
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 30px
+		font-weight: 600
+		color: #555555
+		margin: 0 0 26px
+	&__text
+		font-family: Montserrat, sans-serif
+		font-size: 16px
+		line-height: 28px
+		font-weight: 300
+		color: #8c8c8c
+		margin: 0 0 35px
+	&__list
+		margin: 0
+		list-style: none
+		padding: 0 0 0 50px
+	&__list-item
+		font-family: Montserrat, sans-serif
+		font-size: 16px
+		font-weight: 300
+		color: #8c8c8c
+		display: flex
+		margin: 0 0 12px
+	&__list-item:last-child
+		margin: 0
+	&__list-item:before
+		content: ""
+		background: url("../img/arrow-list.svg") no-repeat center center
+		display: block
+		flex: none
+		height: 21px
+		width: 21px
+		box-sizing: border-box
+		margin: 0 29px 0 0
+
+
+//Section Counters
+.section-counters
+	background-color: #f4f5f8
+	background-image: linear-gradient(90.0deg, #211b19 0%, #4e3427 100%)
+	padding: 69px 0 60px
+	&__content-wrp
+		display: flex
+		justify-content: space-between
+		max-width: 1000px
+		margin: 0 auto
+.counter-block
+	flex: 1 1
+	position: relative
+	display: flex
+	flex-direction: column
+	align-items: center
+	&:last-child
+		margin-right: 0
+	&__icon
+		height: 47px
+		fill: #c7b299
+		margin: 0 0 17px
+		&_clients
+			width: 46px
+		&_coffee
+			width: 51px
+		&_posts
+			width: 46px
+		&_likes
+			width: 47px
+		&_launched
+			width: 56px
+	&__count
+		font-family: Montserrat, sans-serif
+		font-size: 48px
+		font-weight: 200
+		color: #ffffff
+		margin: 0 0 5px
+	&__title
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 300
+		text-transform: uppercase
+		color: #c7b299
+		margin: 0 0 26px
+	&:after
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		margin: 0 auto
+		content: ""
+		width: 30px
+		border-top: 2px solid #ffff
+
+
+
+//Section Recent Posts
+.section-recent-posts
+	padding-top: 73px
+	padding-bottom: 76px
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__title
+		margin: 0 0 15px
+.post-list
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	margin: 0 0 34px
+	&__item
+.post-block
+	max-width: 370px
+	border: 1.0px solid #f8f8f8
+	&__img-block
+		position: relative
+		display: flex
+		width: 100%
+		height: 100%
+	&__img
+		max-height: 220px
+		width: 100%
+		height: auto
+		transition: filter .3s
+	&__date
+	&__text-block
+		padding: 26px 29px 33px
+		transition: background-color .3s
+	&__title-link
+		display: block
+		text-decoration: none
+		margin: 0 0 14px
+	&__title
+		font-family: Raleway, sans-serif
+		font-size: 20px
+		font-weight: 500
+		color: #555555
+	&__description
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		line-height: 22px
+		font-weight: 300
+		color: #8c8c8c
+		padding: 0
+		margin: 0 0 22px
+	&__link
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 300
+		color: $link-hover-color
+		margin: 0
+		padding: 0
+		position: relative
+		text-decoration: none
+		&:after 
+			content: ""
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 4px 0 4px 5px
+			border-color: transparent transparent transparent $link-hover-color
+			position: absolute
+			right: -13px
+			top: 0
+			bottom: 0
+			margin: auto 0
+
+.date-block
+	position: absolute
+	top: 9%
+	left: 6%
+	width: 50px
+	border-radius: 3px
+	&__number
+		display: block
+		padding: 1px 0 2px
+		font-family: Montserrat, sans-serif
+		font-size: 24px
+		font-weight: 300
+		color: #ffffff
+		background-color: #363636
+		width: 100%
+		text-align: center
+		transition: background-color .3s
+	&__month
+		display: block
+		padding: 6px 0
+		font-family: Roboto, sans-serif
+		font-size: 12px
+		font-weight: 400
+		color: #ffffff
+		background-color: #252525
+		width: 100%
+		text-align: center
+		transition: background-color .3s
+
+.post-block:hover .post-block__img
+	filter: brightness(.5)
+	transition: filter .3s
+.post-block:hover .post-block__text-block
+	background-color: #362f2d
+	transition: background-color .3s
+.post-block:hover .post-block__title
+	color: $link-hover-color
+.post-block:hover .post-block__description
+	color: #ffff
+.post-block:hover .date-block__number
+	background-color: #c7b299
+	transition: background-color .3s
+.post-block:hover .date-block__month
+	background-color: #a48d72
+	transition: background-color .3s
+.post-block__title-link:hover .post-block__title
+	color: $link-active-color
+.post-block__title-link:active .post-block__title
+	color: $link-hover-color
+.post-block__link:hover
+	color: $link-active-color
+.post-block__link:hover:after
+	border-color: transparent transparent transparent $link-active-color
+.post-block__link:active
+	color: $link-hover-color
+.post-block__link:active:after
+	border-color: transparent transparent transparent $link-hover-color
+
+
+.arrow-buttons
+	display: flex
+	&__button-link
+		display: block
+		text-decoration: none
+		margin: 0
+	&__button-icon
+		width: 22px
+		height: 22px
+		fill: #d1d1d1
+		transition: fill .3s
+	&__button-link-left
+		margin-right: 10px
+	&__button-link:hover .arrow-buttons__button-icon
+		fill: $link-hover-color
+		transition: fill .3s
+	&__button-link:active .arrow-buttons__button-icon
+		fill: $link-active-color
+
+
+
+//Section Partners
+.section-partners
+	min-height: 489px
+	background: url("../img/bg_partners.jpg") no-repeat no-repeat center center
+	overflow: hidden
+	display: flex
+	flex-direction: column
+	justify-content: center
+	&__partner-link
+		display: flex
+		justify-content: center
+		align-items: center
+	&__partner-logo
+		width: 100%
+		max-width: 210px
+		height: auto
+		transition: transform .2s
+	&__partner-link:hover .section-partners__partner-logo
+		transform: scale(1.2)
+		transition: transform .2s
+	&__partner-link:active .section-partners__partner-logo
+		transform: scale(.95)
+		transition: transform .2s
+.section-partners__content-wrp
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-column-gap: 90px
+
+
+
+//Foote
+.section-footer-text
+	font-family: Montserrat, sans-serif
+	font-size: 14px
+	font-weight: 300
+	color: #555555
+	line-height: 24px
+
+.section-footer
+	padding: 77px 0 49px
+	background-color: #191919
+	&__content-wrp
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+	&__item
+		max-width: 270px
+.about-waxom
+	&__logo
+		margin: 0 0 23px
+	&__description
+		margin: 0 0 24px
+	&__link
+		font-family: Montserrat, sans-serif
+		font-size: 14px
+		font-weight: 400
+		color: #d1d1d1
+		margin: 0
+		padding: 0
+		position: relative
+		text-decoration: none
+		&:after 
+			content: ""
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 4px 0 4px 5px
+			border-color: transparent transparent transparent #d1d1d1
+			position: absolute
+			right: -13px
+			top: 0
+			bottom: 0
+			margin: auto 0
+		&:hover
+			color: $link-hover-color
+		&:hover:after
+			border-color: transparent transparent transparent $link-hover-color
+		&:active
+			color: $link-active-color
+		&:active:after
+			border-color: transparent transparent transparent $link-active-color
+
+.footer-title
+	font-family: Raleway, sans-serif
+	font-size: 24px
+	font-weight: 700
+	color: #ffffff
+	padding: 22px 0 20px
+	display: block
+.recent-posts
+	&__item
+		padding: 0 0 14px
+		border-bottom: 1px solid #252525
+		margin: 0 0 10px
+	&__item:last-child
+		padding: 0
+		border: none
+		margin: 0
+	&__date
+		font-family: Montserrat, sans-serif
+		font-size: 12px
+		font-weight: 300
+		color: #363636
+		margin: 0 0 10px
+	&__post-link
+		text-decoration: none
+		&:hover
+			color: $link-hover-color
+		&:active
+			color: $link-active-color
+	&__post
+		margin: 0
+
+.our-twitter
+	&__item
+		padding: 0 0 13px
+		border-bottom: 1px solid #252525
+		margin: 0 0 12px
+	&__item:last-child
+		padding: 0
+		border: none
+		margin: 0
+	&__post-link
+		text-decoration: none
+		&:hover
+			color: $link-hover-color
+		&:active
+			color: $link-active-color
+	&__post
+		margin: 0
+	&__post-nick
+		color: #00bff3
+		&:hover
+			color: $link-hover-color
+		&:active
+			color: $link-active-color
+	&__post-tag
+		color: #00bff3
+		&:hover
+			color: $link-hover-color
+		&:active
+			color: $link-active-color
+	&__post-link-link
+		color: #555555
+		&:hover
+			color: $link-hover-color
+		&:active
+			color: $link-active-color
+
+	&__time
+		font-family: Montserrat, sans-serif
+		font-size: 12px
+		line-height: 20px
+		font-weight: 300
+		color: #363636
+
+
+
+.dribbble-widget
+	&__title
+		margin: 0 0 8px
+	&__list
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		grid-column-gap: 10px
+		grid-row-gap: 5px
+	&__item
+		display: block
+	&__img
+		width: 100%
+		max-width: 130px
+		height: auto
+		transition: filter .2s
+		&:hover
+			filter: brightness(.7)
+			transition: filter .2s
+		&:active
+			filter: brightness(.5)
+
+
+.section-copyright-text
+	font-family: Montserrat, sans-serif
+	font-size: 13px
+	font-weight: 300
+	color: #555555
+.copyright-link
+	color: #959595
+	text-decoration: none
+	&:hover
+		color: $link-hover-color
+	&:active
+		color: $link-active-color
+
+.section-copyright
+	background-color: #111111
+	padding: 41px 0 52px
+	&__content-wrp
+		display: flex
+		justify-content: space-between
+.copyright-block
+	display: flex
+	&__item
+		display: block
+		text-decoration: none
+		padding: 0 12px
+		border-right: 1px solid #555555
+		&:first-child
+			padding-left: 0
+		&:last-child
+			padding-right: 0
+			border: none
+		&:hover
+			color: $link-hover-color
+		&:active
+			color: $link-active-color
+
+.designer-block
+	display: flex
+	&__item
+		display: block
+		text-decoration: none
+		padding: 0 12px
+		border-right: 1px solid #555555
+		&:first-child
+			padding-left: 0
+		&:last-child
+			padding-right: 0
+			border: none
+		
+@media (max-width: 1199.98px)
+	.logo
+		&__text
+			font-size: 30px
+		&__img
+			height: 50px
+			width: 62px
+	.navigation-block
+		&__cart
+			margin: 0 20px 0 19px
+	.header-menu
+		&__link
+			padding: 7px
+			font-size: 14px
+	
+	.search-form
+		z-index: 11
+		&__label
+				transition: left .5s
+		&__input
+			position: absolute
+			&:focus ~ .search-form__label
+				transition: left .52s
+				left: -174px
+
+
+	.section-realization
+		padding-left: 50px
+		padding-right: 50px
+
+
+	.video-present-text
+		&__btn
+			transform: scale(.8)
+			margin: 0
+		&__title
+			font-size: 30px
+			margin: 0 0 12px
+		&__text
+			font-size: 16px
+			line-height: 28px
+			margin: 0 0 24px
+		&__time
+			font-size: 14px
+
+
+	.section-mobile
+		&__img
+			margin: 0 29px 0 0
+
+
+
+@media (max-width: 991.98px)
+	.button-menu
+		height: 20px
+		min-width: 30px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		position: relative
+		z-index: 11
+		&__line
+			width: 30px
+			height: 2px
+			background: #fff
+			transition: width .3s
+			&:before
+				position: absolute
+				left: 0
+				top: 0
+				content: ""
+				display: block
+				width: 30px
+				height: 2px
+				background: #fff
+				transition: transform .3s, top .3s
+			&:after
+				position: absolute
+				left: 0
+				bottom: 0
+				content: ""
+				display: block
+				width: 30px
+				height: 2px
+				background: #ffffff
+				transition: transform .3s, bottom .3s
+		&__line.button-menu__line_active
+			width: 0
+			transition: width .3s
+			&:before 
+				transform: rotate(45deg)
+				top: 9px
+				transition: transform .3s, top .3s
+			&:after
+				transform: rotate(-45deg)
+				bottom: 9px	
+				transition: transform .3s, bottom .3s	 		
+
+	.logo-n-navigation
+		justify-content: center
+	.logo
+		margin: 0 20%
+		z-index: 11
+
+
+	.header-menu
+		position: absolute
+		height: auto
+		max-height: 0
+		top: 0
+		left: 0
+		right: 0
+		background: #998675
+		padding: 0px 50px 0px
+		overflow: hidden
+		z-index: 10
+		transition: max-height 1s
+		&__list
+			display: flex
+			flex-direction: column
+			margin: 115px 0 40px
+		&_active
+			transition: max-height 1s
+			max-height: 100vh
+			
+	.navigation-block
+		&__cart
+			display: none
+	
+	.header-slider
+		&__up-title
+			font-size: 30px
+		&__title
+			font-size: 42px
+		&__text
+			font-size: 16px
+		&__button
+
+
+	.section-services
+		grid-template-columns: repeat(2, 1fr)
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+
+
+
+	.section-mobile
+		&__content-wrp
+			min-height: 610px
+		&__img
+			margin: 0
+
+
+
+	.post-block
+		&__text-block
+			padding: 15px 10px 17px
+
+
+
+	.section-partners
+		padding: 80px 0
+		background-size: cover
+	.section-partners__content-wrp
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		grid-column-gap: 60px
+		grid-row-gap: 60px
+
+
+
+	.section-footer
+		&__content-wrp
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			grid-column-gap: 30px
+			grid-row-gap: 30px
+	.about-waxom
+		&__logo
+			margin: 0 0 29px
+	.section-copyright
+		&__content-wrp
+			flex-wrap: wrap
+			justify-content: center
+	.copyright-block
+		margin: 0 0 10px
+
+
+
+@media (max-width: 991.98px) and (orientation: landscape)
+	.header-slider
+		&__content
+			margin: 20px 0 0
+		&__up-title
+			font-size: 20px
+			margin: 0 0 10px
+		&__title
+			font-size: 30px
+			margin: 0 0 10px
+		&__text
+			font-size: 14px
+			margin: 0 0 20px
+		&__button
+			min-height: 40px
+			font-size: 13px
+			min-width: 150px
+
+@media (max-width: 767.98px)
+	.header-slider
+		&__up-title
+			font-size: 26px
+		&__title
+			font-size: 35px
+		&__text
+			font-size: 16px
+		&__button
+
+
+	.projects-list
+		grid-template-columns: repeat(2, 1fr)
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+
+
+
+	.section-video-present
+		display: none
+
+
+
+	.section-mobile
+		&__content-wrp
+			min-height: 695px
+			position: relative
+		&__img
+			width: 38%
+			position: absolute
+			bottom: 0
+			left: 50px
+
+	.mobile-text-block
+		justify-content: flex-start
+		&__title
+			margin: 0 0 30px
+			text-align: center
+		&__list
+			padding: 0 0 0 40%
+		&__list-item:before
+			margin: 0 15px 0 0
+
+
+	.section-counters
+		display: none
+	
+
+	.post-list
+		display: grid
+		grid-template-columns: repeat(1, 1fr)
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+		margin: 0 0 40px
+
+
+	.section-partners
+		min-height: 0
+		max-height: 370px
+
+@media (max-width: 767.98px) and (orientation: landscape)
+	.header-slider
+		&__content
+			margin-top: 40px
+		&__up-title
+			font-size: 16px
+			margin: 0
+		&__title
+			font-size: 20px
+			margin: 0 0 5px
+		&__text
+			font-size: 12px
+			margin: 0 0 5px
+		&__button
+			font-size: 11px
+			min-width: 128px
+			min-height: 31px
+
+@media (max-width: 575.98px)
+	.content-wrp
+		padding-left: 25px
+		padding-right: 25px
+	.section-title
+		font-size: 24px
+
+	.logo 
+		margin: 0px 13%
+	.header-slider
+		&__arrow-button
+			display: none
+		&__content
+			padding: 0px 4%
+		&__up-title
+			display: none
+		&__title
+			font-size: 35px
+		&__title-break
+			display: inline
+		&__text
+			font-size: 16px
+		&__button
+
+
+	.section-services
+		grid-column-gap: 15px
+		grid-row-gap: 15px
+	.services-block
+		padding: 0 0 15px
+		&__link
+			margin: 0 0 6px
+		&__icon-wrp
+			margin: 0 0 15px
+		&__icon
+			transform: scale(.8)
+		&__title
+			font-size: 18px
+		&__text
+			line-height: 19px
+
+
+
+	.section-text-boxes
+		&__title
+			font-size: 22px
+			line-height: 22px
+
+
+
+	.section-lastest-projects
+		padding-top: 80px
+		padding-bottom: 80px
+		display: flex
+		flex-direction: column
+		align-items: center
+		&__title
+			margin: 0 0 24px
+	.projects-categories
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		margin: 0 0 15px
+		&__button
+			margin: 0 10px 10px 0//
+			font-family: Montserrat, sans-serif
+			font-size: 14px
+			font-weight: 300
+			color: #8c8c8c
+			padding: 10px 21px 8px
+			border: 1.0px solid #ebebeb
+			border-radius: 3.0px
+			box-sizing: border-box
+			cursor: pointer
+			transition: color .2s, background .2s
+			outline: none
+		&__button_active
+			background: $link-active-color
+			color: #fff
+		&__button:last-child
+			margin: 0 0 10px//
+		&__button:hover
+			color: #fff
+			background: $link-hover-color
+			transition: color .2s, background .2s
+		&__button:active
+			background: $link-active-color
+
+	.projects-list
+		grid-template-columns: repeat(1, 1fr)
+		grid-column-gap: 15px
+		grid-row-gap: 15px
+
+
+
+	.section-mobile
+		&__content-wrp
+			//min-height: 695px
+			min-height: 100px
+			position: relative
+		&__img
+			display: none
+
+	.mobile-text-block
+		&__list
+			padding: 0 0 0 0
+
+
+	.section-footer
+		padding: 80px 0
+		background-color: #191919
+		&__content-wrp
+			display: grid
+			grid-template-columns: repeat(1, 1fr)
+			grid-row-gap: 15px
+		&__item
+			max-width: 270px
+	.about-waxom
+		&__logo
+			margin: 0 0 29px
+		&__description
+			margin: 0 0 33px
+
+	.footer-title
+		font-size: 18px
+		position: relative
+		&:after
+			content: ""
+			display: block
+			position: absolute
+			right: 0
+			top: 0
+			bottom: 0
+			margin: auto 0
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 6.9px 4px 0 4px
+			border-color: #ffffff transparent transparent transparent
+			transition: transform .3s
+		&_active:after 
+			transform: rotate(180deg)
+			transition: transform .5s
+	
+
+	.section-footer__item
+		height: auto
+		max-width: 100%
+		max-height: 70px
+		overflow: hidden
+		transition: max-height .5s
+		&_active
+			max-height: 100vh
+			transition: max-height .5s
+
+	.dribbble-widget
+		&__title
+		&__list
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			grid-column-gap: 10px
+			grid-row-gap: 10px
+		&__item
+			display: block
+		&__img
+			width: 100%
+			max-width: 130px
+			height: auto
