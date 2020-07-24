@@ -1516,9 +1516,9 @@ body {
     .copyright-block__item:last-child {
       padding-right: 0;
       border: none; }
-    .copyright-block__item:hover {
+    .copyright-block__item_link:hover {
       color: #c7b299; }
-    .copyright-block__item:active {
+    .copyright-block__item_link:active {
       color: #998675; }
 
 .designer-block {

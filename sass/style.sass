@@ -1123,10 +1123,11 @@ body
 		&:last-child
 			padding-right: 0
 			border: none
-		&:hover
-			color: $link-hover-color
-		&:active
-			color: $link-active-color
+		&_link
+			&:hover
+				color: $link-hover-color
+			&:active
+				color: $link-active-color
 
 .designer-block
 	display: flex
